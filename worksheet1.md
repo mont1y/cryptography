@@ -6,9 +6,9 @@ Consider an encryption scheme where the first bit of a message is equal to the l
 bit of its ciphertext.
 This encryption scheme is not perfectly secure - show an attack.
 
-#### Semantic Security Game:
+#### Proving that an Encryption Scheme is Not Secure through a Semantic Security Game:
 
-In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**. If you encrypt two different messages, an attacker should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so, the encryption scheme is not perfectly secure.
+In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**. The adversary encrypts two different messages, an attacker should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so, the encryption scheme is not perfectly secure.
 
 ## Solution
 
