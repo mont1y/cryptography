@@ -82,5 +82,7 @@ minus
 
 the probability of adversary A guesses that the message encrypted was m $_{1}$ when it is indeed m $_{1}$ (which is 100%, or 1)
 
-Since the adversary can distinguish which message was encrypted accurately, we can conclude that the encryption scheme is **not** semantically secure.
+= 1 (100%)
+
+Since the adversary can distinguish which message was encrypted with an 100% accuracy, we can conclude that the encryption scheme is **not** semantically secure.
 
