@@ -122,14 +122,33 @@ Can only read the data
 Can read and alter the data
 
 ### What the adversary does (attack severity)
-1. Key recovery
-2. Full plaintext recovery
-3. Distinguishing attack:
+1. **Key recovery**
+
+Severity: Critical
+
+Attacker fully recovers the encryption key, giving them the ability to decrypt all messages encrypted with that key
+
+2. **Full plaintext recovery**
+
+Severity: High
+
+Attacker recovers the complete plaintext of a specific encrypted message, compromising the message’s confidentiality
+
+3. **Distinguishing attack**
+
+Severity: Moderate
+
+Attacker can identify patterns or tell if two ciphertexts correspond to the same or different plaintexts, revealing limited information about the data
 
 ### What the adversary knows
 1. Ciphertext Only Attacks
+    
     "the adversary gets to collect ciphertexts"
+
 2. Known Plaintext Attacks
+    
     "The adversary gets to know both the cipher texts and the plaintexts"
+
 3. Chosen Plaintext Attacks
+    
     "The adversary gets to choose plaintexts and get its respective ciphertext"
