@@ -8,16 +8,7 @@ This encryption scheme is not perfectly secure - show an attack.
 
 #### Semantic Security Game:
 
-In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**.
-
-#### CPA (Chosen Plaintext Attack):
-
-A chosen-plaintext attack (CPA) is an attack model which presumes that the attacker can obtain the ciphertexts for arbitrary plaintexts.
-
-#### Indistinguishability:
-
-If you encrypt two different messages, an attacker should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so, the encryption scheme is not perfectly secure.
-
+In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**. If you encrypt two different messages, an attacker should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so, the encryption scheme is not perfectly secure.
 
 ## Solution
 
@@ -27,30 +18,66 @@ If you encrypt two different messages, an attacker should **not** be able to dis
 
 ---
 
-### 1. Challenger and Adversary:
+### Challenger and Adversary:
 
 The diagram is divided into two columns. The left column (Challenger) represents the encryption process, and the right (Adversary) represents the attacker.
 
-The interaction between them shows a semantic security experiment, where they exchange messages to test the encryption scheme's security.
+The interaction between them shows a semantic security game, where they exchange messages to test the encryption scheme's security.
 
-### 2. 𝑘 ← $𝐾
+### 1. 𝑘 ←$ 𝐾
 
-The Challenger selects a random key 𝑘 from the key space 𝐾. The symbol `←$` means "select at random from."
+The Challenger selects a random secret key 𝑘 from the key space 𝐾 used to encryption later on. The symbol `←$` means "select at random from."
 
-### 3. m $_{0}$ ← 0 || random bits
+### 2. m $_{0}$ ← 0 || random bits
 
-The adversary chooses a message m $_{0}$ that begins with a 0 bit and is followed by random bits.
+The adversary constructs a message (plaintext) m $_{0}$ that begins with a 0 bit followed by random bits.
 
 Note: || represents concatenation, meaning the 0 or 1 is joined with a sequence of random bits to form the message
 
-### 4. m $_{1}$ ← 1 || random bits
+### 3. m $_{1}$ ← 1 || random bits
 
-The adversary chooses another message m $_{1}$ that begins with a 1 bit and is followed by random bits.
+The adversary constructs another message m $_{1}$ that begins with a 1 bit followed by random bits.
 
-### 5. Sending the message
+### 4. Sending the plaintext
+Adversary sends the message (plaintext) to the challenger
 
 After constructing the messages m $_{0}$ and m $_{1}$, The adversary sends the message to the attacker.
 
-### 6. c ← Enc(k,m $_{b}$)
+### 5. c ← Enc(k,m $_{b}$)
 
-The challenger encrypts the messages sent by the adversary (b represents either 0 or 1) 
+The challenger chooses one of the messages the adversary sends randomly {0 or 1}, and encrypts the messages with the secret key 𝑘.
+
+### 6. Sending the ciphertext
+Challenger sends the encrypted message (ciphertext) to the adversary
+
+### 7. $ \hat{b} \leftarrow $ 0 if c[-1] = 0 else 1
+
+The adversary tries to guess which message the challenger encrypted.
+
+
+$ \hat{b} $ represents the bit of the message that the challenger chose at random (i.e. which message the challenger encrypted {0 or 1}).
+
+Since the encryption scheme states that the first bit of a message is equal to the last bit of its ciphertext, we can deduct that, if the last bit of the ciphertext c (denoted by c[-1]) == 0, the message encrypted was m $_{0}$.
+
+Vice versa, if the last bit of the ciphertext c (denoted by c[-1]) == 1, the message encrypted was m $_{1}$.
+
+Therefore,
+
+**SSAdv(A, E) = |Pr[A outputs 1 in experiment 0] − Pr[A outputs 1 in experiment 1]| = |0 − 1| = 1**
+
+Breakdown:
+
+The semantic security advantage (**SSAdv**)
+
+of an adversary A against an encryption scheme E (**SSAdv(A,E)**)
+
+is equal to the absolute value of 
+
+the probability of adversary A guesses that the message encrypted was m $_{1}$ when it's actually m $_{0}$ (which is zero, because the adversary can tell which message was encrypted very easily just by looking at the last bit)
+
+minus
+
+the probability of adversary A guesses that the message encrypted was m $_{1}$ when it is indeed m $_{1}$ (which is 100%, or 1)
+
+Since the adversary can distinguish which message was encrypted accurately, we can conclude that the encryption scheme is **not** semantically secure.
+
