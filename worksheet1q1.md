@@ -1,6 +1,4 @@
-# Cryptography Worksheet 1 CPA (Chosen Plaintext Attack) Walkthrough
-
-## Question 1
+# Cryptography Worksheet 1 CPA (Chosen Plaintext Attack) Question 1 Walkthrough
 
 Consider an encryption scheme where the first bit of a message is equal to the last
 bit of its ciphertext.
