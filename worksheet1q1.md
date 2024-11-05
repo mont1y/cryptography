@@ -11,7 +11,7 @@ In cryptography, a semantic security game is an experiment involving a **challen
 #### Definition of CPA Secure Encryption:
 A polynomial time adversary cannot perform a distinguishing attack even if he has the power to choose plaintexts and see their encryptions.
 
-In other words, the adversary encrypts two different messages, an attacker should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so accurately, the encryption scheme is not perfectly secure.
+In other words, the challenger encrypts two different messages the adversary chooses, and the adversary should **not** be able to distinguish which ciphertext corresponds to which message. If the attacker is able to do so accurately, the encryption scheme is not perfectly secure.
 
 ## Solution
 
