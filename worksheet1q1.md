@@ -84,5 +84,10 @@ the probability of adversary A guesses that the message encrypted was m $_{1}$ w
 
 = 1 (100%)
 
+---
+
+
+### Conclusion
+
 Since the adversary can distinguish which message was encrypted with an 100% accuracy in polynomial time (The algorithm of distinguishing the plaintext and its corresponding ciphertext), we can conclude that the encryption scheme is **not** semantically secure.
 
