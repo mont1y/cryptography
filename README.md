@@ -1,7 +1,7 @@
 # CS357 Cryptography Resources
 Author: Monty
 
-Instruction: Read this in any software that could render markdown files (e.g. VSCode)
+Download the Markdown file and read them in any software that could render markdown files (e.g. VSCode)
 
 ## Detailed Worksheet Walkthroughs
 1. Cryptography Worksheet 1
