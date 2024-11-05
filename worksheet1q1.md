@@ -6,7 +6,7 @@ This encryption scheme is not perfectly secure - show an attack.
 
 #### Semantic Security Game:
 
-In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**. The game proves whether the encryption schema of the challenger is secure.
+In cryptography, a semantic security game is an experiment involving a **challenger** and an **adversary**. The game determines the security of the encryption scheme.
 
 #### Definition of CPA Secure Encryption:
 A polynomial time adversary cannot perform a distinguishing attack even if he has the power to choose plaintexts and see their encryptions.
