@@ -11,7 +11,7 @@ Download the Markdown file and read them in any software that could render markd
 2. Cryptography Worksheet 2[#worksheet2.md]
 2. Cryptography Worksheet 3[#worksheet3.md]
 ## Crypto Lecture notes
-1. Lecture 1-2 [#lecture1.md]
+1. Lecture 1-2 [#lecture1to2.md]
         
         a. Cryptography Property
         b. Encryption Scheme
@@ -25,4 +25,4 @@ Download the Markdown file and read them in any software that could render markd
             1. What the adversary does
             2. What the adversary knows
 
-2. 
+2. Lecture 3-4
