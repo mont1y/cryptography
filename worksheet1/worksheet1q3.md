@@ -6,28 +6,18 @@ plaintext message. (The symbol ⊕ is the bitwise XOR; recall that a ⊕ a ⊕ b
 
 ## Solution
 
-uses the same key.
-m0 -> 1 || random bits
-c[0] = 0 if k[0] = 1 else 1
-Ok from here we know what is the first bit of the key k.
+c - ciphertext
+m - message
+k - secret key
 
-Keep doing this for n times and then I will fully recorver the key.
+to get the original message, just have the encryption scheme work twice
+Dec(k, c) = k ⊕ c = k ⊕ (m ⊕ k) = (k ⊕ k) ⊕ m = m
 
-As the distinguish:
-m0 -> 10 || random bits
-c[0] = 0 if k[0] = 1 else 1
-c[1] = 0 if k[1] = 0 else 1
-k could be:
-10
-01
-11
-00
+to prove that the encryption scheme is not secure, we have it encrypt a message M.
 
-c could be:
-00
-11
-01
-10
+m0 = M but first bit is flipped
+m1 = random message that is not m0 nor M
 
-m1 -> 01 || random bits
-c[0] 
+send them to the encryption scheme, if the ciphertext has the same first bit as M, m0 was encrypted, otherwise m1.
+
+Therefore the encryption scheme is not secure
